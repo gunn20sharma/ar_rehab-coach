@@ -14,6 +14,8 @@ const Navbar = ({ isAuthenticated }) => {
             <Link to="/exercise">Exercise</Link>
             <Link to="/progress">Progress</Link>
             <Link to="/dashboard">Dashboard</Link>
+            <Link to="/camera">Camera</Link>
+            <Link to="/settings">Settings</Link>
           </>
         )}
         {!isAuthenticated ? (
