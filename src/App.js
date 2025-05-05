@@ -18,11 +18,31 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} setUser={setUser} />} />
-        <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
-          <Route path="/exercise" element={<Exercise user={user} />} />
-          <Route path="/dashboard" element={<Dashboard user={user} />} />
-          <Route path="/progress" element={<Progress user={user} />} />
-        </Route>
+        <Route 
+  path="/dashboard" 
+  element={
+    <PrivateRoute isAuthenticated={isAuthenticated}>
+      <Dashboard user={user} />
+    </PrivateRoute>
+  } 
+/>
+<Route 
+  path="/exercise" 
+  element={
+    <PrivateRoute isAuthenticated={isAuthenticated}>
+      <Exercise user={user} />
+    </PrivateRoute>
+  } 
+/>
+<Route 
+  path="/progress" 
+  element={
+    <PrivateRoute isAuthenticated={isAuthenticated}>
+      <Progress user={user} />
+    </PrivateRoute>
+  } 
+/>
+
       </Routes>
     </Router>
   );
